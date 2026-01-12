@@ -1,0 +1,25 @@
+{
+  "name": "torque-language",
+  "displayName": "torque-language",
+  "description": "Syntax support for the Torque programming language.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "torque",
+      "aliases": ["Torque", "torque"],
+      "extensions": [".tor"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "torque",
+      "scopeName": "source.torque",
+      "path": "./syntaxes/torque.tmLanguage.json"
+    }]
+  }
+}

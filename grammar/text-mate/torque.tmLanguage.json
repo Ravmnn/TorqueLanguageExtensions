@@ -1,0 +1,112 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "torque",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#literal-numbers"
+        },
+        {
+            "include": "#literal-keywords"
+        },
+        {
+            "include": "#literal-single-char-string"
+        },
+        {
+            "include": "#single-line-comments"
+        },
+        {
+            "include": "#multi-line-comments"
+        },
+        {
+            "include": "#torque-code-block"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.torque",
+                    "match": "\\b(if|else|while|for|break|continue|return)\\b"
+                },
+                {
+                    "name": "keyword.other.torque",
+                    "match": "\\b(default|as|array|package|unpack|struct|implement|static)\\b"
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.torque",
+                    "match": "[\\+\\-\\*\\/\\%\\>\\<\\!\\=\\;\\&\\|]"
+                }
+            ]
+        },
+        "types": {
+            "patterns": [
+                {
+                    "name": "storage.type.torque",
+                    "match": "\\b(let|void|ptrsize|byte|char|bool|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|half|float|double|float16|float32|float64)\\b"
+                }
+            ]
+        },
+        "literal-numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.torque",
+                    "match": "\\b\\d+(\\.\\d+)?\\b"
+                }
+            ]
+        },
+        "literal-keywords": {
+            "patterns": [
+                {
+                    "name": "constant.language.torque",
+                    "match": "\\b(true|false)\\b"
+                }
+            ]
+        },
+        "literal-single-char-string": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single.torque",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.torque",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "single-line-comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.torque",
+                    "match": "(?<!<)#(?!>).*$"
+                }
+            ]
+        },
+        "multi-line-comments": {
+            "patterns": [
+                {
+                    "name": "comment.block.torque",
+                    "begin": "#>",
+                    "end": "<#"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.torque"
+}
