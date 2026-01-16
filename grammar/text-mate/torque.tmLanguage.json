@@ -21,6 +21,9 @@
             "include": "#literal-single-char-string"
         },
         {
+            "include": "#literal-string"
+        },
+        {
             "include": "#single-line-comments"
         },
         {
@@ -39,7 +42,7 @@
                 },
                 {
                     "name": "keyword.other.torque",
-                    "match": "\\b(default|as|array|package|unpack|struct|implement|static)\\b"
+                    "match": "\\b(default|as|array|package|unpack|struct|implement|static|external)\\b"
                 }
             ]
         },
@@ -55,7 +58,7 @@
             "patterns": [
                 {
                     "name": "storage.type.torque",
-                    "match": "\\b(let|void|ptrsize|byte|char|bool|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|half|float|double|float16|float32|float64)\\b"
+                    "match": "\\b(let|void|usize|byte|char|bool|int|int8|int16|int32|int64|uint|uint8|uint16|uint32|uint64|half|float|double|float16|float32|float64)\\b"
                 }
             ]
         },
@@ -81,6 +84,21 @@
                     "name": "string.quoted.single.torque",
                     "begin": "'",
                     "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.torque",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "literal-string": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.torque",
+                    "begin": "\"",
+                    "end": "\"",
                     "patterns": [
                         {
                             "name": "constant.character.escape.torque",
